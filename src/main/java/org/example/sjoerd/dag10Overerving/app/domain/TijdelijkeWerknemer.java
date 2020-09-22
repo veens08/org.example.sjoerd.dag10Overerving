@@ -1,34 +1,14 @@
 package org.example.sjoerd.dag10Overerving.app.domain;
 
-public class TijdelijkeWerknemer {
+public class TijdelijkeWerknemer extends Werknemer{
 
-    private int id;
-    private String naam;
     private int aantalUren;
     private int uurTarief;
 
     public TijdelijkeWerknemer(int id, String naam, int aantalUren, int uurTarief) {
-
-        this.id = id;
-        this.naam = naam;
-        this.aantalUren = aantalUren;
-        this.uurTarief = uurTarief;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNaam() {
-        return naam;
-    }
-
-    public void setNaam(String naam) {
-        this.naam = naam;
+        super(id, naam);
+        setAantalUren (aantalUren);
+        setUurTarief (uurTarief);
     }
 
     public int getAantalUren() {
@@ -45,5 +25,9 @@ public class TijdelijkeWerknemer {
 
     public void setUurTarief(int uurTarief) {
         this.uurTarief = uurTarief;
+    }
+
+    public int getSalaris () {
+        return aantalUren * uurTarief;
     }
 }
