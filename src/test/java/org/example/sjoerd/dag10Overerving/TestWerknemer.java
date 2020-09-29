@@ -1,9 +1,6 @@
 package org.example.sjoerd.dag10Overerving;
 
-import org.example.sjoerd.dag10Overerving.app.domain.TijdelijkeWerknemer;
-import org.example.sjoerd.dag10Overerving.app.domain.VasteWerknemer;
-import org.example.sjoerd.dag10Overerving.app.domain.Werkneembaar;
-import org.example.sjoerd.dag10Overerving.app.domain.Werknemer;
+import org.example.sjoerd.dag10Overerving.app.domain.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -116,8 +113,9 @@ public class TestWerknemer {
 
         Comparable comparable;
 
-        Arrays.sort (werkneemBaren);
+        Arrays.sort (werkneemBaren, new werknemerSalarisComperator ());
 
+        System.out.println ();
         System.out.println ("Werknemers gesorteerd op salaris:");
         printSalarisWerkneemBaren (werkneemBaren);
 
@@ -128,10 +126,13 @@ public class TestWerknemer {
 
         Werkneembaar [] werkneemBaren = getWerkneemBaren ();
 
+        printSalarisWerkneemBaren (werkneemBaren);
+
         Comparable comparable;
 
-        Arrays.sort (werkneemBaren);
+        Arrays.sort (werkneemBaren, new werknemerIdComperator ());
 
+        System.out.println ();
         System.out.println ("Werknemers gesorteerd op Id:");
         printSalarisWerkneemBaren (werkneemBaren);
     }
@@ -141,10 +142,13 @@ public class TestWerknemer {
 
         Werkneembaar [] werkneemBaren = getWerkneemBaren ();
 
+        printSalarisWerkneemBaren (werkneemBaren);
+
         Comparable comparable;
 
-        Arrays.sort (werkneemBaren);
+        Arrays.sort (werkneemBaren, new werknemerNaamComperator ());
 
+        System.out.println ();
         System.out.println ("Werknemers gesorteerd op Naam:");
         printSalarisWerkneemBaren (werkneemBaren);
     }
