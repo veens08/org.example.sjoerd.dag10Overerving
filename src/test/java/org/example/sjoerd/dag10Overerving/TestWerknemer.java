@@ -134,8 +134,21 @@ public class TestWerknemer {
 
         System.out.println ("Werknemers gesorteerd op Id:");
         printSalarisWerkneemBaren (werkneemBaren);
-
     }
+
+    @Test
+    void deWerknemersSorterenOpNaam () {
+
+        Werkneembaar [] werkneemBaren = getWerkneemBaren ();
+
+        Comparable comparable;
+
+        Arrays.sort (werkneemBaren);
+
+        System.out.println ("Werknemers gesorteerd op Naam:");
+        printSalarisWerkneemBaren (werkneemBaren);
+    }
+
     private void printSalarisWerkneemBaren(Werkneembaar[] werkneemBaren) {
         for (Werkneembaar w : werkneemBaren) {
             System.out.println ("Id = " + w.getId () + " naam = " + w.getNaam () + " salaris = " + w.getSalaris ());

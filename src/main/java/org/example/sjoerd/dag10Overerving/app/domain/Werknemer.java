@@ -41,9 +41,17 @@ public abstract class Werknemer implements Werkneembaar, Comparable {
         return this.id == otherwerknemer.id;
     }
 
-    public int compareTo(Object otherObject) {
-        Werkneembaar otherwerkneembaar = (Werkneembaar) otherObject;
-        return this.getId () - otherwerkneembaar.getId ();
-    }
+    //public int compareTo (Object otherObject) {
+    //    Werkneembaar otherwerkneembaar = (Werkneembaar) otherObject;
+    //    return this.getId () - otherwerkneembaar.getId ();
+    //}
 
+    public int compareTo (Object otherObject) {
+        Werkneembaar otherwerkneembaar = (Werkneembaar) otherObject;
+        //String huidigeNaam = this.getNaam ().toLowerCase ();
+        //String nieuweNaam = ((Werkneembaar) otherObject).getNaam ().toLowerCase ();
+
+        //return ( huidigeNaam.compareTo (nieuweNaam));
+        return ( this.getNaam ().toLowerCase ().compareTo (otherwerkneembaar.getNaam ().toLowerCase ()));
+        }
 }
