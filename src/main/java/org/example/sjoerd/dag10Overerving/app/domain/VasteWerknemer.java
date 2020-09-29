@@ -1,6 +1,6 @@
 package org.example.sjoerd.dag10Overerving.app.domain;
 
-public class VasteWerknemer extends Werknemer{
+public class VasteWerknemer extends Werknemer implements Comparable{
 
     private int salarisSchaal;
 
@@ -21,8 +21,18 @@ public class VasteWerknemer extends Werknemer{
         return salarisSchaal * 1000;
     }
 
-    String toStringRepresentation() {
-        return "Vastemedewerker [id = " + getId () + "naam = " + getNaam () + " salarisschaal = " + salarisSchaal + "]";
+
+    public String toString () {
+        return "Vaste"  + super.toString () + " en salarisschaal = " + salarisSchaal + "]";
     }
 
+    public int compareTo(Object otherObject) {
+        Werkneembaar otherwerkneembaar = (Werkneembaar) otherObject;
+        return this.getSalaris () - otherwerkneembaar.getSalaris ();
+    }
+
+    //public int compareTo(Object otherObject) {
+    //    Werkneembaar otherwerkneembaar = (Werkneembaar) otherObject;
+    //    return this.getId () - otherwerkneembaar.getId ();
+    //}
 }

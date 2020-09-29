@@ -1,6 +1,6 @@
 package org.example.sjoerd.dag10Overerving.app.domain;
 
-public class Werknemer {
+public abstract class Werknemer implements Werkneembaar {
     private int id;
     private String naam;
 
@@ -25,7 +25,20 @@ public class Werknemer {
         this.naam = naam;
     }
 
-    public int getSalaris() {
-        return 0;
+    @Override
+    public String toString() {
+        return "werknemer [id = " + getId() + " naam = " + getNaam();
     }
+    public abstract int getSalaris();
+
+    public boolean equals(Object otherObject) {
+        if(otherObject == null) {
+            return false;
+        } else if( !(otherObject instanceof Werknemer)){
+            return false;
+        }
+        Werknemer otherwerknemer = (Werknemer) otherObject;
+        return this.id == otherwerknemer.id;
+    }
+
 }

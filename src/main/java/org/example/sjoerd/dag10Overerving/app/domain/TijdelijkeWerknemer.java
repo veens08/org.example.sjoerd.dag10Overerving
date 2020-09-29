@@ -1,14 +1,14 @@
 package org.example.sjoerd.dag10Overerving.app.domain;
 
-public class TijdelijkeWerknemer extends Werknemer{
+public class TijdelijkeWerknemer extends Werknemer implements Comparable {
 
     private int aantalUren;
-    private int uurTarief;
+    private int uurloon;
 
-    public TijdelijkeWerknemer(int id, String naam, int aantalUren, int uurTarief) {
+    public TijdelijkeWerknemer(int id, String naam, int aantalUren, int uurloon) {
         super(id, naam);
         setAantalUren (aantalUren);
-        setUurTarief (uurTarief);
+        setUurloon (uurloon);
     }
 
     public int getAantalUren() {
@@ -19,15 +19,28 @@ public class TijdelijkeWerknemer extends Werknemer{
         this.aantalUren = aantalUren;
     }
 
-    public int getUurTarief() {
-        return uurTarief;
+    public int getUurloon () {
+        return uurloon;
     }
-
-    public void setUurTarief(int uurTarief) {
-        this.uurTarief = uurTarief;
+    public void setUurloon(int uurloon) {
+        this.uurloon = uurloon;
     }
 
     public int getSalaris () {
-        return aantalUren * uurTarief;
+        return aantalUren * uurloon;
     }
+
+    public String toString() {
+        return "Tijdelijke" + super.toString () + "en uurloon = " + uurloon + "]";
+    }
+
+    public int compareTo(Object otherObject) {
+        Werkneembaar otherwerkneembaar = (Werkneembaar) otherObject;
+        return this.getSalaris () - otherwerkneembaar.getSalaris ();
+    }
+
+    //public int compareToId(Object otherObject) {
+    //    Werkneembaar otherwerkneembaar = (Werkneembaar) otherObject;
+    //    return this.getId () - otherwerkneembaar.getId ();
+    //}
 }
