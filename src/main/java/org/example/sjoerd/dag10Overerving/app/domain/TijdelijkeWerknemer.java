@@ -34,10 +34,10 @@ public class TijdelijkeWerknemer extends Werknemer implements Comparable {
         return "Tijdelijke" + super.toString () + "en uurloon = " + uurloon + "]";
     }
 
-    public int compareTo(Object otherObject) {
-        Werkneembaar otherwerkneembaar = (Werkneembaar) otherObject;
-        return this.getSalaris () - otherwerkneembaar.getSalaris ();
-    }
+    //public int compareTo(Object otherObject) {
+    //    Werkneembaar otherwerkneembaar = (Werkneembaar) otherObject;
+    //    return this.getSalaris () - otherwerkneembaar.getSalaris ();
+    //}
 
     //public int compareToId(Object otherObject) {
     //    Werkneembaar otherwerkneembaar = (Werkneembaar) otherObject;

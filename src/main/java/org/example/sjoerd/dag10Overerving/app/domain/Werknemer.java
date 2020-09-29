@@ -1,6 +1,6 @@
 package org.example.sjoerd.dag10Overerving.app.domain;
 
-public abstract class Werknemer implements Werkneembaar {
+public abstract class Werknemer implements Werkneembaar, Comparable {
     private int id;
     private String naam;
 
@@ -39,6 +39,11 @@ public abstract class Werknemer implements Werkneembaar {
         }
         Werknemer otherwerknemer = (Werknemer) otherObject;
         return this.id == otherwerknemer.id;
+    }
+
+    public int compareTo(Object otherObject) {
+        Werkneembaar otherwerkneembaar = (Werkneembaar) otherObject;
+        return this.getId () - otherwerkneembaar.getId ();
     }
 
 }

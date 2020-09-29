@@ -26,10 +26,10 @@ public class VasteWerknemer extends Werknemer implements Comparable{
         return "Vaste"  + super.toString () + " en salarisschaal = " + salarisSchaal + "]";
     }
 
-    public int compareTo(Object otherObject) {
-        Werkneembaar otherwerkneembaar = (Werkneembaar) otherObject;
-        return this.getSalaris () - otherwerkneembaar.getSalaris ();
-    }
+    //public int compareTo(Object otherObject) {
+    //    Werkneembaar otherwerkneembaar = (Werkneembaar) otherObject;
+    //  return this.getSalaris () - otherwerkneembaar.getSalaris ();
+    //
 
     //public int compareTo(Object otherObject) {
     //    Werkneembaar otherwerkneembaar = (Werkneembaar) otherObject;
