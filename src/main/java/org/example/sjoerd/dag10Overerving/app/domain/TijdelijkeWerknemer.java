@@ -1,5 +1,7 @@
 package org.example.sjoerd.dag10Overerving.app.domain;
 
+import java.util.Comparator;
+
 public class TijdelijkeWerknemer extends Werknemer {
 
     private int aantalUren;
@@ -22,6 +24,7 @@ public class TijdelijkeWerknemer extends Werknemer {
     public int getUurloon () {
         return uurloon;
     }
+
     public void setUurloon(int uurloon) {
         this.uurloon = uurloon;
     }
@@ -31,7 +34,7 @@ public class TijdelijkeWerknemer extends Werknemer {
     }
 
     public String toString() {
-        return "Tijdelijke" + super.toString () + "en uurloon = " + uurloon + "]";
+        return "Tijdelijke" + super.toString () + " en uurloon = " + uurloon + "]";
     }
 
 }

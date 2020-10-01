@@ -21,7 +21,6 @@ public class VasteWerknemer extends Werknemer{
         return salarisSchaal * 1000;
     }
 
-
     public String toString () {
         return "Vaste"  + super.toString () + " en salarisschaal = " + salarisSchaal + "]";
     }

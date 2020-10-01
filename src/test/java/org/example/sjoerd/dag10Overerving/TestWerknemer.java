@@ -4,6 +4,7 @@ import org.example.sjoerd.dag10Overerving.app.domain.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.concurrent.Callable;
 
 public class TestWerknemer {
@@ -111,14 +112,11 @@ public class TestWerknemer {
 
         printSalarisWerkneemBaren (werkneemBaren);
 
-        Comparable comparable;
-
-        Arrays.sort (werkneemBaren, new werknemerSalarisComperator ());
+        Arrays.sort (werkneemBaren, new WerknemerSalarisComparator ());
 
         System.out.println ();
         System.out.println ("Werknemers gesorteerd op salaris:");
         printSalarisWerkneemBaren (werkneemBaren);
-
     }
 
     @Test
@@ -128,9 +126,7 @@ public class TestWerknemer {
 
         printSalarisWerkneemBaren (werkneemBaren);
 
-        Comparable comparable;
-
-        Arrays.sort (werkneemBaren, new werknemerIdComperator ());
+        Arrays.sort (werkneemBaren, new WerknemerIdComparator ());
 
         System.out.println ();
         System.out.println ("Werknemers gesorteerd op Id:");
@@ -144,12 +140,38 @@ public class TestWerknemer {
 
         printSalarisWerkneemBaren (werkneemBaren);
 
-        Comparable comparable;
-
-        Arrays.sort (werkneemBaren, new werknemerNaamComperator ());
+        Arrays.sort (werkneemBaren, new WerknemerNaamComparator ());
 
         System.out.println ();
+
         System.out.println ("Werknemers gesorteerd op Naam:");
+        printSalarisWerkneemBaren (werkneemBaren);
+    }
+
+    @Test
+    void deWerknemersMetAlleSorteringe () {
+
+        Werkneembaar [] werkneemBaren = getWerkneemBaren ();
+
+        System.out.println ("De werknemers ongesorteerd:");
+        printSalarisWerkneemBaren (werkneemBaren);
+
+        Arrays.sort (werkneemBaren, new WerknemerNaamComparator ());
+
+        System.out.println ();
+        System.out.println ("De werknemers gesorteerd op Naam:");
+        printSalarisWerkneemBaren (werkneemBaren);
+
+        Arrays.sort (werkneemBaren, new WerknemerIdComparator ());
+
+        System.out.println ();
+        System.out.println ("De werknemers gesorteerd op Id:");
+        printSalarisWerkneemBaren (werkneemBaren);
+
+        Arrays.sort (werkneemBaren, new WerknemerSalarisComparator ());
+
+        System.out.println ();
+        System.out.println ("De werknemers gesorteerd op salaris en naam:");
         printSalarisWerkneemBaren (werkneemBaren);
     }
 
